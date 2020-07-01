@@ -1,0 +1,31 @@
+{#-
+  This file was automatically generated - do not edit
+-#}
+{% extends "base.html" %}
+{% block extrahead %}
+  {% set title = config.site_name %}
+  {% if page and page.title and not page.is_homepage %}
+    {% set title = config.site_name ~ " - " ~ page.title | striptags %}
+  {% endif %}
+  {% set image = config.site_url ~ 'assets/images/banner.png' %}
+  <meta content="website" property="og:type">
+  <meta content="{{ title }}" property="og:title">
+  <meta content="{{ config.site_description }}" property="og:description">
+  <meta content="{{ page.canonical_url }}" property="og:url">
+  <meta content="{{ image }}" property="og:image">
+  <meta content="image/png" property="og:image:type">
+  <meta content="1200" property="og:image:width">
+  <meta content="630" property="og:image:height">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="@somefunagba" name="twitter:site">
+  <meta content="@somefunagba" name="twitter:creator">
+  <meta content="{{ title }}" name="twitter:title">
+  <meta content="{{ config.site_description }}" name="twitter:description">
+  <meta content="{{ image }}" name="twitter:image">
+{% endblock %}
+{% block announce %}
+  <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
+<a href="https://github.com/somefunagba/uniformlydampedbinomialfilter">
+  If you like this work, consider staring it on <strong>GitHub</strong> or sharing it.
+</a>
+{% endblock %}
